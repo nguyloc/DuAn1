@@ -31,6 +31,8 @@ public class PlayerWallGrabState : PlayerTouchingWallState
 
         holdPosition = player.transform.position;
         HoldPosition();
+
+        Debug.Log("Enter Grab");
     }
 
     public override void Exit()

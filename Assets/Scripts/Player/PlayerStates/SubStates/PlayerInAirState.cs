@@ -6,10 +6,12 @@ public class PlayerInAirState : PlayerState
 {
     private int xInput;
     private bool isGrounded;
+    private bool isTounchingWall;
     private bool jumpInput;
     private bool jumpInputStop;
     private bool coyoteTime;
     private bool isJumping;
+    private bool grabInput;
     
 
     public PlayerInAirState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(player, stateMachine, playerData, animBoolName)
@@ -21,6 +23,7 @@ public class PlayerInAirState : PlayerState
         base.DoChecks();
 
         isGrounded = player.CheckIfGrounded();
+        isTounchingWall = player.CheckIfTounchingWall();
     }
 
     public override void Enter()
@@ -42,6 +45,7 @@ public class PlayerInAirState : PlayerState
         xInput = player.InputHandler.NormInputX;
         jumpInput = player.InputHandler.JumpInput;
         jumpInputStop = player.InputHandler.JumpInputStop;
+        grabInput = player.InputHandler.GrabInput;
 
         CheckJumpMultiplier();
 
@@ -49,10 +53,23 @@ public class PlayerInAirState : PlayerState
         {
             stateMachine.ChangeState(player.LandState);
         }
+        
         else if(jumpInput && player.JumpState.CanJump())
         {
+            player.InputHandler.UseJumpInput();
             stateMachine.ChangeState(player.JumpState);
         }
+
+        else if (isTounchingWall && grabInput)
+        {
+            stateMachine.ChangeState(player.WallGrabState);
+        }
+        
+        else if(isTounchingWall && xInput == player.FacingDirection && player.CurentVelocity.y <= 0)
+        {
+            stateMachine.ChangeState(player.WallSlideState);
+        }
+        
         else
         {
             player.CheckIfShouldFlip(xInput);

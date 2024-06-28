@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
     public PlayerWallGrabState WallGrabState { get; private set; }
     public PlayerWallClimbState WallClimbState { get; private set; }
 
-    public PlayerWallJumpState PlayerWallJumpState { get; private set; }
+    public PlayerWallJumpState WallJumpState { get; private set; }
 
     #endregion
 
@@ -61,7 +61,7 @@ public class Player : MonoBehaviour
         WallSlideState = new PlayerWallSlideState(this, StateMachine, playerData, "wallSlide");
         WallGrabState = new PlayerWallGrabState(this, StateMachine, playerData, "wallGrab");
         WallClimbState = new PlayerWallClimbState(this, StateMachine, playerData, "wallClimb");
-        PlayerWallJumpState = new PlayerWallJumpState(this, StateMachine, playerData,"inAie" );
+        WallJumpState = new PlayerWallJumpState(this, StateMachine, playerData,"inAir" );
     }
 
     private void Start()
@@ -88,6 +88,15 @@ public class Player : MonoBehaviour
     #endregion
 
     #region Set Functions
+
+    public void SetVelocity(float velocity, Vector2 angle, int direction)
+    {
+        angle.Normalize();
+        workspace.Set(angle.x * velocity * direction, angle.y * velocity );
+        RB.velocity = workspace;
+        CurentVelocity = workspace;
+    }
+
     public void SetVelocityX(float velocity)
     {
         workspace.Set(velocity, CurentVelocity.y);
@@ -114,6 +123,11 @@ public class Player : MonoBehaviour
     public bool CheckIfTounchingWall()
     {
         return Physics2D.Raycast(wallCheck.position,Vector2.right * FacingDirection, playerData.wallCheckDistance,playerData.whatIsGround);
+    }
+
+    public bool CheckIfTounchingWallBack()
+    {
+        return Physics2D.Raycast(wallCheck.position, Vector2.right * - FacingDirection, playerData.wallCheckDistance, playerData.whatIsGround);
     }
 
     public void CheckIfShouldFlip(int xInput)

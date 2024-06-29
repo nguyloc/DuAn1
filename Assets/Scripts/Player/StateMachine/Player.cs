@@ -142,7 +142,7 @@ public class Player : MonoBehaviour
         return Physics2D.Raycast(ledgeCheck.position, Vector2.right * FacingDirection, playerData.wallCheckDistance, playerData.whatIsGround);
     }
 
-    public bool CheckIfTounchingWallBack()
+    public bool CheckIfTouchingWallBack()
     {
         return Physics2D.Raycast(wallCheck.position, Vector2.right * - FacingDirection, playerData.wallCheckDistance, playerData.whatIsGround);
     }

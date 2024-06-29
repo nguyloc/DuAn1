@@ -48,6 +48,11 @@ public class PlayerInAirState : PlayerState
     public override void Exit()
     {
         base.Exit();
+
+        oldIsTochingWall = false;
+        oldIsTochingWallBack = false;
+        isTounchingWall = false ;
+        isTounchingWallBack = false ;
     }
 
     public override void LogicUpdate()

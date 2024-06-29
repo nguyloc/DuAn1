@@ -19,7 +19,7 @@ public class PlayerGroundedState : PlayerState
         base.DoChecks();
 
         isGrounded = player.CheckIfGrounded();
-        isTouchingWall = player.CheckIfTounchingWall();
+        isTouchingWall = player.CheckIfTouchingWall();
     }
 
     public override void Enter()

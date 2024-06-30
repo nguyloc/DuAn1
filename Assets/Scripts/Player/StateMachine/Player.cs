@@ -20,6 +20,7 @@ public class Player : MonoBehaviour
 
     public PlayerWallJumpState WallJumpState { get; private set; }
     public PlayerLegdeClimbState LegdeClimbState { get; private set; }
+    public PlayerDashState DashState { get; private set; }
 
     #endregion
 
@@ -27,6 +28,8 @@ public class Player : MonoBehaviour
     public Animator Anim {  get; private set; }
     public PlayerInputHandler InputHandler { get; private set; }
     public Rigidbody2D RB { get; private set; }
+    public Transform DashDirectionIndicator { get; private set; }
+
     #endregion
 
     #region Check Transforms
@@ -68,6 +71,7 @@ public class Player : MonoBehaviour
         WallClimbState = new PlayerWallClimbState(this, StateMachine, playerData, "wallClimb");
         WallJumpState = new PlayerWallJumpState(this, StateMachine, playerData,"inAir" );
         LegdeClimbState = new PlayerLegdeClimbState(this, StateMachine, playerData, "ledgeClimbState");
+        DashState = new PlayerDashState(this, StateMachine, playerData, "inAir");
     }
 
     private void Start()
@@ -75,6 +79,7 @@ public class Player : MonoBehaviour
         Anim = GetComponent<Animator>();
         InputHandler = GetComponent<PlayerInputHandler>();
         RB = GetComponent<Rigidbody2D>();
+        DashDirectionIndicator = transform.Find("DashDirectionIndicator");
 
         FacingDirection = 1;
         
@@ -105,6 +110,13 @@ public class Player : MonoBehaviour
     {
         angle.Normalize();
         workspace.Set(angle.x * velocity * direction, angle.y * velocity );
+        RB.velocity = workspace;
+        CurentVelocity = workspace;
+    }
+
+    public void SetVelocity(float velocity, Vector2 direction)
+    {
+        workspace = direction * velocity;
         RB.velocity = workspace;
         CurentVelocity = workspace;
     }
@@ -163,10 +175,11 @@ public class Player : MonoBehaviour
         RaycastHit2D xHit = Physics2D.Raycast(wallCheck.position, Vector2.right * FacingDirection, playerData.wallCheckDistance, playerData.whatIsGround);
         float xDist = xHit.distance;
         workspace.Set(xDist * FacingDirection, 0f);
+        
         RaycastHit2D yHit = Physics2D.Raycast(ledgeCheck.position + (Vector3)(workspace), Vector2.down, ledgeCheck.position.y - wallCheck.position.y, playerData.whatIsGround) ;
         float yDist = yHit.distance;
-
-        workspace.Set(wallCheck.position.x + (xDist * FacingDirection),ledgeCheck.position.y - yDist);
+        workspace.Set(wallCheck.position.x + (xDist * FacingDirection), ledgeCheck.position.y - yDist);
+        
         return workspace;
     }
 
@@ -179,4 +192,5 @@ public class Player : MonoBehaviour
         transform.Rotate(0.0f, 180.0f, 0.0f);
     }
     #endregion
+
 }

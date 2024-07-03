@@ -14,5 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Sword 1
   itemIcon: {fileID: -443716916, guid: f549ec199f65a2a4b9d11fa5f0d3ed05, type: 3}
+  isStackable: 0
+  StackQuantity: 0
   toolDamage: 5
   toolDurability: 20

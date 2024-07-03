@@ -14,4 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Apple
   itemIcon: {fileID: 1912271787, guid: dcc9ecd80a5f44248a7d88fc9c4ac70b, type: 3}
+  isStackable: 1
+  StackQuantity: 12
   healRecovery: 1

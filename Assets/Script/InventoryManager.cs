@@ -61,6 +61,18 @@ public class InventoryManager : MonoBehaviour
             }
         }
 
+        if (Input.GetMouseButtonDown(1))
+        {
+            if (isMoving)
+            {
+                //EndMove();
+            }
+            else
+            {
+               BeginSplit();
+            }
+        }
+
         if (isMoving)
         {
             itemCursor.enabled = true;
@@ -185,7 +197,7 @@ public class InventoryManager : MonoBehaviour
     {
         originalSlot = GetClosestSlot();
 
-        if (originalSlot.GetItem() == null) return;
+        if (originalSlot == null || originalSlot.GetItem() == null) return;
 
         movingSlot.AddItem(
         originalSlot.GetItem(),
@@ -196,42 +208,87 @@ public class InventoryManager : MonoBehaviour
         RefreshUI();
         return;
     }
+
+    private void BeginSplit()
+    {
+        originalSlot = GetClosestSlot();
+
+        if (originalSlot == null || originalSlot.GetItem() == null) return;
+
+        if(originalSlot.GetQuantity() <= 1) return;
+
+        movingSlot.AddItem(originalSlot.GetItem(), Mathf.CeilToInt(originalSlot.GetQuantity() / 2f));
+
+        originalSlot.SubQuantity(Mathf.CeilToInt(originalSlot.GetQuantity() / 2f));
+
+        isMoving = true;
+        RefreshUI();
+        return;
+    }
     private void EndMove()
     {
         originalSlot = GetClosestSlot();
 
-        if(originalSlot.GetItem() != null)
+        if (originalSlot == null)
         {
-            if(originalSlot.GetItem() == movingSlot.GetItem())
+            AddItem(movingSlot.GetItem(), movingSlot.GetQuantity());
+        }
+        else
+        {
+            if (originalSlot.GetItem() != null)
             {
-                if(originalSlot.GetItem().isStackable)
+                //if slot is the same item
+                if (originalSlot.GetItem() == movingSlot.GetItem())
                 {
-                    originalSlot.AddQuantity(originalSlot.GetQuantity());
-                    originalSlot.RemoveItem();
+                    //if slot item is stackable
+                    if (originalSlot.GetItem().isStackable)
+                    {
+                        int ItemMaxStack = originalSlot.GetItem().StackQuantity;
+                        int count = originalSlot.GetQuantity() + movingSlot.GetQuantity();
+
+                        if(count >  ItemMaxStack)
+                        {
+                            int remain = count - ItemMaxStack;
+                            originalSlot.SetQuantity(ItemMaxStack);
+                            movingSlot.SetQuantity(remain);
+
+                            isMoving = true;
+                            RefreshUI();
+                            return;
+                        }
+                        else
+                        {
+                            originalSlot.AddQuantity(originalSlot.GetQuantity());
+                            movingSlot.RemoveItem();
+                        }                       
+                    }
+                    else
+                    {
+                        return;
+                    }
                 }
                 else
                 {
+                    //swap
+                    tempSlot.AddItem(originalSlot.GetItem(), originalSlot.GetQuantity());
+                    originalSlot.AddItem(movingSlot.GetItem(), movingSlot.GetQuantity());
+                    movingSlot.AddItem(tempSlot.GetItem(), tempSlot.GetQuantity());
+                    tempSlot.RemoveItem();
+
+                    RefreshUI();
                     return;
                 }
             }
             else
             {
-                //swap
-                tempSlot.AddItem(originalSlot.GetItem(),originalSlot.GetQuantity());
-                originalSlot.AddItem(movingSlot.GetItem(),movingSlot.GetQuantity());
-                movingSlot.AddItem(tempSlot.GetItem(),tempSlot.GetQuantity());
-
-                RefreshUI();
-                return;
+                originalSlot.AddItem(movingSlot.GetItem(), movingSlot.GetQuantity());
+                movingSlot.RemoveItem();
             }
         }
-        else
-        {
-            originalSlot.AddItem(movingSlot.GetItem(), movingSlot.GetQuantity());
-            movingSlot.RemoveItem();
-        }
+
+       
         isMoving = false;
         RefreshUI();
-       
+        return;
     }
 }

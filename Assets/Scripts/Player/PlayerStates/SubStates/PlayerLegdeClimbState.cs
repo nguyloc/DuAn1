@@ -17,7 +17,7 @@ public class PlayerLegdeClimbState : PlayerState
     private int xInput;
     private int yInput;
 
-    public PlayerLegdeClimbState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(player, stateMachine, playerData, animBoolName)
+    public PlayerLegdeClimbState(Player.StateMachine.Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(player, stateMachine, playerData, animBoolName)
     {
     }
 
@@ -38,6 +38,11 @@ public class PlayerLegdeClimbState : PlayerState
     {
         base.Enter();
 
+        CalcukatePlayerPosition();
+    }
+
+    private void CalcukatePlayerPosition()
+    {
         player.SetVelocityZero();
         player.transform.position = detectedPos;
         cornerPos = player.DetermineCornerPosition();

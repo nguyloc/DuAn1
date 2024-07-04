@@ -88,6 +88,7 @@ public class PlayerInAirState : PlayerState
         {
             stateMachine.ChangeState(player.PrimaryAttackState);
         }
+        
         else if (player.InputHandler.AttackInputs[(int)CombatInputs.secondary])
         {
             stateMachine.ChangeState(player.SecondaryAttackState);

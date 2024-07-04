@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static PlayerInputHandler;
 
 public class PlayerInAirState : PlayerState
 {
@@ -83,7 +84,16 @@ public class PlayerInAirState : PlayerState
 
         CheckJumpMultiplier();
 
-        if (isGrounded && player.CurentVelocity.y < 0.01f) 
+        if (player.InputHandler.AttackInputs[(int)CombatInputs.primary])
+        {
+            stateMachine.ChangeState(player.PrimaryAttackState);
+        }
+        else if (player.InputHandler.AttackInputs[(int)CombatInputs.secondary])
+        {
+            stateMachine.ChangeState(player.SecondaryAttackState);
+        }
+
+        else if (isGrounded && player.CurentVelocity.y < 0.01f) 
         {
             stateMachine.ChangeState(player.LandState);
         }

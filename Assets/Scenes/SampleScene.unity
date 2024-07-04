@@ -19593,14 +19593,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 546486961148412409, guid: 5741964514899cc47966309fb2127fe9, type: 3}
-      propertyPath: m_SortingLayer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 546486961148412409, guid: 5741964514899cc47966309fb2127fe9, type: 3}
-      propertyPath: m_SortingLayerID
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1854075323765228695, guid: 5741964514899cc47966309fb2127fe9, type: 3}
       propertyPath: m_LocalPosition.x
       value: -38.08
@@ -19644,30 +19636,6 @@ PrefabInstance:
     - target: {fileID: 4429052591330976495, guid: 5741964514899cc47966309fb2127fe9, type: 3}
       propertyPath: m_Name
       value: 'Player '
-      objectReference: {fileID: 0}
-    - target: {fileID: 4610739667016658949, guid: 5741964514899cc47966309fb2127fe9, type: 3}
-      propertyPath: m_SortingLayer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4610739667016658949, guid: 5741964514899cc47966309fb2127fe9, type: 3}
-      propertyPath: m_SortingLayerID
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5745806034000873890, guid: 5741964514899cc47966309fb2127fe9, type: 3}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5745806034000873890, guid: 5741964514899cc47966309fb2127fe9, type: 3}
-      propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5745806034000873890, guid: 5741964514899cc47966309fb2127fe9, type: 3}
-      propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5745806034000873890, guid: 5741964514899cc47966309fb2127fe9, type: 3}
-      propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnDashDirectionInput
       objectReference: {fileID: 0}
     - target: {fileID: 7890389423119494993, guid: 5741964514899cc47966309fb2127fe9, type: 3}
       propertyPath: m_IsActive

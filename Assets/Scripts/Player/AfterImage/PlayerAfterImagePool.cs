@@ -1,47 +1,48 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerAfterImagePool : MonoBehaviour
+namespace Player.AfterImage
 {
-    [SerializeField]
-    private GameObject afterImagePrefab;
-    private Queue<GameObject> availableObjects = new Queue<GameObject>();
-
-    public static PlayerAfterImagePool Instance { get; private set; }
-
-    private void Awake()
+    public class PlayerAfterImagePool : MonoBehaviour
     {
-        Instance = this;
-        GrowPool();
-    }
+        [SerializeField]
+        private GameObject afterImagePrefab;
+        private Queue<GameObject> availableObjects = new Queue<GameObject>();
 
-    private void GrowPool()
-    {
-        for (int i = 0; i < 10; i++)
+        public static PlayerAfterImagePool Instance { get; private set; }
+
+        private void Awake()
         {
-            var instanceToAdd = Instantiate(afterImagePrefab);
-            instanceToAdd.transform.SetParent(transform);
-            AddToPool(instanceToAdd);
-        }
-    }
-
-    public void AddToPool(GameObject instance)
-    {
-        instance.SetActive(false);
-        availableObjects.Enqueue(instance);
-    }
-
-    public GameObject GetFromPool()
-    {
-        if (availableObjects.Count == 0)
-        {
+            Instance = this;
             GrowPool();
         }
 
-        var instance = availableObjects.Dequeue();
-        instance.SetActive(true);
-        return instance;
+        private void GrowPool()
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                var instanceToAdd = Instantiate(afterImagePrefab);
+                instanceToAdd.transform.SetParent(transform);
+                AddToPool(instanceToAdd);
+            }
+        }
+
+        public void AddToPool(GameObject instance)
+        {
+            instance.SetActive(false);
+            availableObjects.Enqueue(instance);
+        }
+
+        public GameObject GetFromPool()
+        {
+            if (availableObjects.Count == 0)
+            {
+                GrowPool();
+            }
+
+            var instance = availableObjects.Dequeue();
+            instance.SetActive(true);
+            return instance;
+        }
     }
 }

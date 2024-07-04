@@ -1,42 +1,43 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
-public class SlotClass
+namespace Script
 {
-    [SerializeField] ItemClass item;
-    [SerializeField] int quantity = 0;
-
-
-    public SlotClass()
+    [System.Serializable]
+    public class SlotClass
     {
-        item = null;
-        quantity = 0;
-    }
-
-    public SlotClass(ItemClass _item, int _quanlity)
-    {
-        this.item = _item;
-        this.quantity = _quanlity;
-    }
-
-    public ItemClass GetItem() { return this.item; }
-    public int GetQuantity() { return this.quantity; }
-    public void AddQuantity(int _quantity) { quantity += _quantity; }
-    public void SubQuantity(int _quantity) { quantity -= _quantity; }
+        [SerializeField] ItemClass item;
+        [SerializeField] int quantity = 0;
 
 
-    public void AddItem(ItemClass item, int quantity)
-    {
-        this.item = item;
-        this.quantity = quantity;
-    }
+        public SlotClass()
+        {
+            item = null;
+            quantity = 0;
+        }
+
+        public SlotClass(ItemClass _item, int _quanlity)
+        {
+            this.item = _item;
+            this.quantity = _quanlity;
+        }
+
+        public ItemClass GetItem() { return this.item; }
+        public int GetQuantity() { return this.quantity; }
+        public void AddQuantity(int _quantity) { quantity += _quantity; }
+        public void SubQuantity(int _quantity) { quantity -= _quantity; }
 
 
-    public void RemoveItem()
-    {
-        this.item = null;
-        this.quantity = 0;
+        public void AddItem(ItemClass item, int quantity)
+        {
+            this.item = item;
+            this.quantity = quantity;
+        }
+
+
+        public void RemoveItem()
+        {
+            this.item = null;
+            this.quantity = 0;
+        }
     }
 }

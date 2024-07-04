@@ -1,3 +1,6 @@
+using Player.Data;
+using Player.Input;
+using Player.PlayerStates.SubStates;
 using UnityEngine;
 
 namespace Player.StateMachine

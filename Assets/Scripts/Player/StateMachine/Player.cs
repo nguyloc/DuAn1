@@ -36,6 +36,7 @@ public class Player : MonoBehaviour
     public PlayerInputHandler InputHandler { get; private set; }
     public Rigidbody2D RB { get; private set; }
     public Transform DashDirectionIndicator { get; private set; }
+    public BoxCollider2D MovementCollider { get; private set; }
 
     #endregion
 
@@ -50,6 +51,8 @@ public class Player : MonoBehaviour
     [SerializeField]
     private Transform ledgeCheck;
 
+    [SerializeField]
+    private Transform ceilingCheck;
     #endregion
 
     #region Other Variables
@@ -91,6 +94,7 @@ public class Player : MonoBehaviour
         InputHandler = GetComponent<PlayerInputHandler>();
         RB = GetComponent<Rigidbody2D>();
         DashDirectionIndicator = transform.Find("DashDirectionIndicator");
+        MovementCollider = GetComponent<BoxCollider2D>();
 
         FacingDirection = 1;
         
@@ -150,6 +154,11 @@ public class Player : MonoBehaviour
 
     #region Check Functions
 
+    public bool CheckForCeiling()
+    {
+        return Physics2D.OverlapCircle(ceilingCheck.position, playerData.groundCheckRadius, playerData.whatIsGround);
+    }
+
     public bool CheckIfGrounded()
     {
         return Physics2D.OverlapCircle(groundCheck.position,playerData.groundCheckRadius,playerData.whatIsGround);
@@ -180,6 +189,17 @@ public class Player : MonoBehaviour
     #endregion
 
     #region Other Functions
+
+    public void SetColliderHeight(float height)
+    {
+        Vector2 center = MovementCollider.offset;
+        workspace.Set(MovementCollider.size.x, height);
+
+        center.y += (height - MovementCollider.size.y) / 2;
+
+        MovementCollider.size = workspace;
+        MovementCollider.offset = center;
+    }
 
     public Vector2 DetermineCornerPosition()
     {

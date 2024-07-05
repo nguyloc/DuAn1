@@ -9,35 +9,34 @@ public class PlayerCrouchMoveState : PlayerGroundedState
     {
     }
 
-    //public override void Enter()
-    //{
-    //    base.Enter();
-    //    player.SetColliderHeight(playerData.crouchColliderHeight);
-    //}
+    public override void Enter()
+    {
+        base.Enter();
+        player.SetColliderHeight(playerData.crouchColliderHeight);
+    }
 
-    //public override void Exit()
-    //{
-    //    base.Exit();
-    //    player.SetColliderHeight(playerData.standColliderHeight);
-    //}
+    public override void Exit()
+    {
+        base.Exit();
+        player.SetColliderHeight(playerData.standColliderHeight);
+    }
 
-    //public override void LogicUpdate()
-    //{
-    //    base.LogicUpdate();
-    //    if (!isExitingState)
-    //    {
-    //        core.Movement.SetVelocityX(playerData.crouchMovementVelocity * core.Movement.FacingDirection);
-    //        core.Movement.CheckIfShouldFlip(xInput);
+    public override void LogicUpdate()
+    {
+        base.LogicUpdate();
+        if (!isExitingState)
+        {
+            player.SetVelocityX(playerData.crouchMovementVelocity * player.FacingDirection);
+            player.CheckIfShouldFlip(xInput);
 
-    //        if (xInput == 0)
-    //        {
-    //            stateMachine.ChangeState(player.CrouchIdleState);
-    //        }
-    //        else if (yInput != -1 && !isTouchingCeiling)
-    //        {
-    //            stateMachine.ChangeState(player.MoveState);
-    //        }
-    //    }
-
-    //}
+            if (xInput == 0)
+            {
+                stateMachine.ChangeState(player.CrouchIdleState);
+            }
+            else if (yInput != -1 && !isTouchingCeiling)
+            {
+                stateMachine.ChangeState(player.MoveState);
+            }
+        }
+    }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class PlayerLegdeClimbState : PlayerState
 {
@@ -11,6 +12,7 @@ public class PlayerLegdeClimbState : PlayerState
 
     private bool isHanging;
     private bool isClimbing;
+    private bool isTouchingCeiling;
     private bool jumpInput;
 
 
@@ -67,7 +69,14 @@ public class PlayerLegdeClimbState : PlayerState
 
         if (isAnimationFinished)
         {
-            stateMachine.ChangeState(player.IdleState);
+            if (isTouchingCeiling)
+            {
+                stateMachine.ChangeState(player.CrouchIdleState);
+            }
+            else
+            {
+                stateMachine.ChangeState(player.IdleState);
+            }
         }
         else
         {
@@ -80,6 +89,7 @@ public class PlayerLegdeClimbState : PlayerState
 
             if (xInput == player.FacingDirection && isHanging && !isClimbing)
             {
+                CheckForSpace();
                 isClimbing = true;
                 player.Anim.SetBool("climbLedge", true);
             }
@@ -96,4 +106,10 @@ public class PlayerLegdeClimbState : PlayerState
     }
 
     public void SetDetectedPosition (Vector2 pos) => detectedPos = pos;
+
+    private void CheckForSpace()
+    {
+        isTouchingCeiling = Physics2D.Raycast(cornerPos + (Vector2.up * 0.015f) + (Vector2.right * player.FacingDirection * 0.015f), Vector2.up, playerData.standColliderHeight, playerData.whatIsGround);
+        player.Anim.SetBool("isTouchingCeiling", isTouchingCeiling);
+    }
 }

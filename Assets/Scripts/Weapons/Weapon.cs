@@ -17,7 +17,7 @@ namespace Player.Weapons
 
         protected int attackCounter;
 
-        protected virtual void Start()
+        protected virtual void Awake()
         {
             baseAnimator = transform.Find("Base").GetComponent<Animator>();
             weaponAnimator = transform.Find("Weapon").GetComponent<Animator>();
@@ -28,7 +28,7 @@ namespace Player.Weapons
         {
             gameObject.SetActive(true);
 
-            if (attackCounter >= weaponData.movementSpeed.Length)
+            if (attackCounter >= weaponData.amountOfAttacks)
             {
                 attackCounter = 0;
             }

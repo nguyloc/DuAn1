@@ -40,5 +40,10 @@ namespace Intermediaries.WeaponAnimationToWeapon
         {
             weapon.AnimationTurnOnFlipTigger();
         }
+
+        private void AnimationActionTrigger()
+        {
+            weapon.AnimationActionTrigger();
+        }
     }
 }

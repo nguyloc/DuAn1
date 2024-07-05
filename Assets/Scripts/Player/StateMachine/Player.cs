@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
@@ -35,7 +35,6 @@ public class Player : MonoBehaviour
     public Rigidbody2D RB { get; private set; }
     public Transform DashDirectionIndicator { get; private set; }
     public BoxCollider2D MovementCollider { get; private set; }
-    public PlayerInventory Inventory { get; private set; }
     #endregion
 
     #region Other Variables         
@@ -74,10 +73,6 @@ public class Player : MonoBehaviour
         RB = GetComponent<Rigidbody2D>();
         DashDirectionIndicator = transform.Find("DashDirectionIndicator");
         MovementCollider = GetComponent<BoxCollider2D>();
-        Inventory = GetComponent<PlayerInventory>();
-
-        PrimaryAttackState.SetWeapon(Inventory.weapons[(int)CombatInputs.primary]);
-        //SecondaryAttackState.SetWeapon(Inventory.weapons[(int)CombatInputs.primary]);
         StateMachine.Initialize(IdleState);
     }
 
@@ -104,25 +99,12 @@ public class Player : MonoBehaviour
 
         MovementCollider.size = workspace;
         MovementCollider.offset = center;
-    }   
+    }
 
     private void AnimationTrigger() => StateMachine.CurrentState.AnimationTrigger();
 
     private void AnimtionFinishTrigger() => StateMachine.CurrentState.AnimationFinishTrigger();
 
-   
+
     #endregion
-}
-
-        private void AnimationTrigger() => StateMachine.CurrentState.AnimationTrigger();
-
-        private void AnimationFinishTrigger() => StateMachine.CurrentState.AnimationFinishTrigger();
-        private void Flip()
-        {
-            FacingDirection *= -1;
-            transform.Rotate(0.0f, 180.0f, 0.0f);
-        }
-        #endregion
-
-    }
 }

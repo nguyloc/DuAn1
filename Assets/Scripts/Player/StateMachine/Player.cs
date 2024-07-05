@@ -2,6 +2,7 @@ using Player.Data;
 using Player.Input;
 using Player.PlayerStates.SubStates;
 using UnityEngine;
+using Player.Inventory;
 
 namespace Player.StateMachine
 {
@@ -37,6 +38,8 @@ namespace Player.StateMachine
         public Rigidbody2D RB { get; private set; }
         public Transform DashDirectionIndicator { get; private set; }
         public BoxCollider2D MovementCollider { get; private set; }
+        public PlayerInventory Inventory { get; private set; }
+
         #endregion
 
         #region Other Variables
@@ -75,6 +78,8 @@ namespace Player.StateMachine
             RB = GetComponent<Rigidbody2D>();
             DashDirectionIndicator = transform.Find("DashDirectionIndicator");
             MovementCollider = GetComponent<BoxCollider2D>();
+            Inventory = GetComponent<PlayerInventory>();
+            PrimaryAttackState.SetWeapon(Inventory.weapons[(int)CombatInputs.primary]);
             StateMachine.Initialize(IdleState);
         }
 

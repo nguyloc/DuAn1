@@ -1,0 +1,17 @@
+Index: Assets/Scripts/Player/Data/PlayerData.asset
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>%YAML 1.1\n%TAG !u! tag:unity3d.com,2011:\n--- !u!114 &11400000\nMonoBehaviour:\n  m_ObjectHideFlags: 0\n  m_CorrespondingSourceObject: {fileID: 0}\n  m_PrefabInstance: {fileID: 0}\n  m_PrefabAsset: {fileID: 0}\n  m_GameObject: {fileID: 0}\n  m_Enabled: 1\n  m_EditorHideFlags: 0\n  m_Script: {fileID: 11500000, guid: d6c80d03f2f6f1e4f86ea00a1cb60f27, type: 3}\n  m_Name: PlayerData\n  m_EditorClassIdentifier: \n  movementVelocity: 10\n  jumpVelocity: 15\n  amountOfJumps: 1\n  wallJumpVelocity: 20\n  wallJumpTime: 0.4\n  wallJumpAngle: {x: 1, y: 2}\n  coyoteTime: 0.2\n  variableJumpHeightMultiplier: 0.5\n  wallSlideVelocity: 2\n  wallClimbVelocity: 3\n  startOffset: {x: 0.35, y: 0.7}\n  stopOffset: {x: 0.35, y: 0.7}\n  groundCheckRadius: 0.3\n  wallCheckDistance: 0.5\n  whatIsGround:\n    serializedVersion: 2\n    m_Bits: 128\n
+===================================================================
+diff --git a/Assets/Scripts/Player/Data/PlayerData.asset b/Assets/Scripts/Player/Data/PlayerData.asset
+--- a/Assets/Scripts/Player/Data/PlayerData.asset	
++++ b/Assets/Scripts/Player/Data/PlayerData.asset	
+@@ -14,7 +14,7 @@
+   m_EditorClassIdentifier: 
+   movementVelocity: 10
+   jumpVelocity: 15
+-  amountOfJumps: 1
++  amountOfJumps: 2
+   wallJumpVelocity: 20
+   wallJumpTime: 0.4
+   wallJumpAngle: {x: 1, y: 2}

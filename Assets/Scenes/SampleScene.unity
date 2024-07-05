@@ -454,7 +454,7 @@ MonoBehaviour:
     m_ActionId: 5be67685-9c74-4eec-a5c9-d2e40bccb28a
     m_ActionName: Gameplay/SecondaryAttack[/Mouse/rightButton]
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: Keyboard
+  m_DefaultControlScheme: 
   m_DefaultActionMap: Gameplay
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}

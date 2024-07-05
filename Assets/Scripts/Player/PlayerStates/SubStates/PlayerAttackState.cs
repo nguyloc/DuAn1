@@ -1,13 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.SocialPlatforms.Impl;
-using UnityEngine.Windows;
+using Player.Data;
+using Player.PlayerStates.SuperStates;
+using Player.StateMachine;
 
-public class PlayerAttackState : PlayerAbilityState
+namespace Player.PlayerStates.SubStates
 {
-    public PlayerAttackState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(player, stateMachine, playerData, animBoolName)
+    public class PlayerAttackState : PlayerAbilityState
     {
+        public PlayerAttackState(StateMachine.Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(player, stateMachine, playerData, animBoolName)
+        {
+        }
     }
 }
 

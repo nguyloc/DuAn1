@@ -1,55 +1,57 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using Player.Data;
+using Player.StateMachine;
 
-public class PlayerAbilityState : PlayerState
+namespace Player.PlayerStates.SuperStates
 {
-    protected bool isAbilityDone;
-
-    private bool isGrounded;
-
-    public PlayerAbilityState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(player, stateMachine, playerData, animBoolName)
+    public class PlayerAbilityState : PlayerState
     {
-    }
+        protected bool isAbilityDone;
 
-    public override void DoChecks()
-    {
-        base.DoChecks();
+        private bool isGrounded;
 
-        isGrounded = core.CollisionSenses.Ground;
-    }
-
-    public override void Enter()
-    {
-        base.Enter();
-
-        isAbilityDone = false;
-    }
-
-    public override void Exit()
-    {
-        base.Exit();
-    }
-
-    public override void LogicUpdate()
-    {
-        base.LogicUpdate();
-
-        if (isAbilityDone)
+        public PlayerAbilityState(StateMachine.Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(player, stateMachine, playerData, animBoolName)
         {
-            if (isGrounded && core.Movement.CurrentVelocity.y < 0.01f)
+        }
+
+        public override void DoChecks()
+        {
+            base.DoChecks();
+
+            isGrounded = core.CollisionSenses.Ground;
+        }
+
+        public override void Enter()
+        {
+            base.Enter();
+
+            isAbilityDone = false;
+        }
+
+        public override void Exit()
+        {
+            base.Exit();
+        }
+
+        public override void LogicUpdate()
+        {
+            base.LogicUpdate();
+
+            if (isAbilityDone)
             {
-                stateMachine.ChangeState(player.IdleState);
-            }
-            else
-            {
-                stateMachine.ChangeState(player.InAirState);
+                if (isGrounded && core.Movement.CurrentVelocity.y < 0.01f)
+                {
+                    stateMachine.ChangeState(player.IdleState);
+                }
+                else
+                {
+                    stateMachine.ChangeState(player.InAirState);
+                }
             }
         }
-    }
 
-    public override void PhysicsUpdate()
-    {
-        base.PhysicsUpdate();
+        public override void PhysicsUpdate()
+        {
+            base.PhysicsUpdate();
+        }
     }
 }

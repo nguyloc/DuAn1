@@ -1,5 +1,7 @@
 using UnityEngine;
 
+namespace Player.AfterImage
+{
     public class PlayerAfterImage : MonoBehaviour
     {
         [SerializeField]
@@ -43,4 +45,5 @@ using UnityEngine;
             }
         }
     }
+}
 

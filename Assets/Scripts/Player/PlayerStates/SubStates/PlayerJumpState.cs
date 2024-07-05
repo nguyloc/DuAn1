@@ -1,41 +1,42 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.InteropServices.WindowsRuntime;
-using UnityEngine;
-using UnityEngine.SocialPlatforms.Impl;
+using Player.Data;
+using Player.PlayerStates.SuperStates;
+using Player.StateMachine;
 
-public class PlayerJumpState : PlayerAbilityState
+namespace Player.PlayerStates.SubStates
 {
-    private int amountOfJumpsLeft;
-
-    public PlayerJumpState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(player, stateMachine, playerData, animBoolName)
+    public class PlayerJumpState : PlayerAbilityState
     {
-        amountOfJumpsLeft = playerData.amountOfJumps;
-    }
+        private int amountOfJumpsLeft;
 
-    public override void Enter()
-    {
-        base.Enter();
-        player.InputHandler.UseJumpInput();
-        core.Movement.SetVelocityY(playerData.jumpVelocity);
-        isAbilityDone = true;
-        amountOfJumpsLeft--;
-        player.InAirState.SetIsJumping();
-    }
-
-    public bool CanJump()
-    {
-        if (amountOfJumpsLeft > 0)
+        public PlayerJumpState(StateMachine.Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(player, stateMachine, playerData, animBoolName)
         {
-            return true;
+            amountOfJumpsLeft = playerData.amountOfJumps;
         }
-        else
+
+        public override void Enter()
         {
-            return false;
+            base.Enter();
+            player.InputHandler.UseJumpInput();
+            core.Movement.SetVelocityY(playerData.jumpVelocity);
+            isAbilityDone = true;
+            amountOfJumpsLeft--;
+            player.InAirState.SetIsJumping();
         }
+
+        public bool CanJump()
+        {
+            if (amountOfJumpsLeft > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public void ResetAmountOfJumpsLeft() => amountOfJumpsLeft = playerData.amountOfJumps;
+
+        public void DecreaseAmountOfJumpsLeft() => amountOfJumpsLeft--;
     }
-
-    public void ResetAmountOfJumpsLeft() => amountOfJumpsLeft = playerData.amountOfJumps;
-
-    public void DecreaseAmountOfJumpsLeft() => amountOfJumpsLeft--;
 }

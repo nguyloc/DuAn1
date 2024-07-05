@@ -1,18 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class CoreComponent : MonoBehaviour
+namespace Core.CoreComponents
 {
-    protected Core core;
-
-    protected virtual void Awake()
+    public class CoreComponent : MonoBehaviour
     {
-        core = transform.parent.GetComponent<Core>();
+        protected Core core;
 
-        if (core == null) 
-        { 
-            Debug.LogError("There is no Core on the parent"); 
+        protected virtual void Awake()
+        {
+            core = transform.parent.GetComponent<Core>();
+
+            if (core == null) 
+            { 
+                Debug.LogError("There is no Core on the parent"); 
+            }
         }
     }
 }

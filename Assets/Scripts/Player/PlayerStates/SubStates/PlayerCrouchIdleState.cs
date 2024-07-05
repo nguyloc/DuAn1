@@ -1,41 +1,43 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.SocialPlatforms.Impl;
+using Player.Data;
+using Player.PlayerStates.SuperStates;
+using Player.StateMachine;
 
-public class PlayerCrouchIdleState : PlayerGroundedState
+namespace Player.PlayerStates.SubStates
 {
-    public PlayerCrouchIdleState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(player, stateMachine, playerData, animBoolName)
+    public class PlayerCrouchIdleState : PlayerGroundedState
     {
-    }
-
-    public override void Enter()
-    {
-        base.Enter();
-
-        core.Movement.SetVelocityZero();
-        player.SetColliderHeight(playerData.crouchColliderHeight);
-    }
-
-    public override void Exit()
-    {
-        base.Exit();
-        player.SetColliderHeight(playerData.standColliderHeight);
-    }
-
-    public override void LogicUpdate()
-    {
-        base.LogicUpdate();
-
-        if (!isExitingState)
+        public PlayerCrouchIdleState(StateMachine.Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(player, stateMachine, playerData, animBoolName)
         {
-            if (xInput != 0)
+        }
+
+        public override void Enter()
+        {
+            base.Enter();
+
+            core.Movement.SetVelocityZero();
+            player.SetColliderHeight(playerData.crouchColliderHeight);
+        }
+
+        public override void Exit()
+        {
+            base.Exit();
+            player.SetColliderHeight(playerData.standColliderHeight);
+        }
+
+        public override void LogicUpdate()
+        {
+            base.LogicUpdate();
+
+            if (!isExitingState)
             {
-                stateMachine.ChangeState(player.CrouchMoveState);
-            }
-            else if (yInput != -1 && !isTouchingCeiling)
-            {
-                stateMachine.ChangeState(player.IdleState);
+                if (xInput != 0)
+                {
+                    stateMachine.ChangeState(player.CrouchMoveState);
+                }
+                else if (yInput != -1 && !isTouchingCeiling)
+                {
+                    stateMachine.ChangeState(player.IdleState);
+                }
             }
         }
     }

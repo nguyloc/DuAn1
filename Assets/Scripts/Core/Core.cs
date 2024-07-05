@@ -1,36 +1,39 @@
-using System.Collections;
-using System.Collections.Generic;
+using Core.CoreComponents;
+using Generics;
 using UnityEngine;
 
-public class Core : MonoBehaviour
+namespace Core
 {
-    public Movement Movement
+    public class Core : MonoBehaviour
     {
-        get => GenericNotImplementedError<Movement>.TryGet(movement, transform.parent.name);
-        private set => movement = value;
-    }
-    public CollisionSenses CollisionSenses
-    {
-        get => GenericNotImplementedError<CollisionSenses>.TryGet(collisionSenses, transform.parent.name);
-        private set => collisionSenses = value;
-    }
+        public Movement Movement
+        {
+            get => GenericNotImplementedError<Movement>.TryGet(movement, transform.parent.name);
+            private set => movement = value;
+        }
+        public CollisionSenses CollisionSenses
+        {
+            get => GenericNotImplementedError<CollisionSenses>.TryGet(collisionSenses, transform.parent.name);
+            private set => collisionSenses = value;
+        }
  
 
-    private Movement movement;
-    private CollisionSenses collisionSenses;
+        private Movement movement;
+        private CollisionSenses collisionSenses;
   
 
-    private void Awake()
-    {
-        Movement = GetComponentInChildren<Movement>();
-        CollisionSenses = GetComponentInChildren<CollisionSenses>();
+        private void Awake()
+        {
+            Movement = GetComponentInChildren<Movement>();
+            CollisionSenses = GetComponentInChildren<CollisionSenses>();
       
-    }
+        }
 
-    public void LogicUpdate()
-    {
-        Movement.LogicUpdate();
+        public void LogicUpdate()
+        {
+            Movement.LogicUpdate();
        
-    }
+        }
 
+    }
 }

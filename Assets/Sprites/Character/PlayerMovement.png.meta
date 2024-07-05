@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -100,10 +100,10 @@ TextureImporter:
       name: PlayerMovement_0
       rect:
         serializedVersion: 2
-        x: 24
-        y: 656
-        width: 16
-        height: 26
+        x: 0
+        y: 640
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -121,10 +121,10 @@ TextureImporter:
       name: PlayerMovement_1
       rect:
         serializedVersion: 2
-        x: 88
-        y: 656
-        width: 16
-        height: 25
+        x: 64
+        y: 640
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -142,10 +142,10 @@ TextureImporter:
       name: PlayerMovement_2
       rect:
         serializedVersion: 2
-        x: 152
-        y: 656
-        width: 16
-        height: 25
+        x: 128
+        y: 640
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,10 +163,10 @@ TextureImporter:
       name: PlayerMovement_3
       rect:
         serializedVersion: 2
-        x: 216
-        y: 656
-        width: 16
-        height: 26
+        x: 192
+        y: 640
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,10 +184,10 @@ TextureImporter:
       name: PlayerMovement_4
       rect:
         serializedVersion: 2
-        x: 23
-        y: 594
-        width: 17
-        height: 29
+        x: 0
+        y: 576
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -205,10 +205,10 @@ TextureImporter:
       name: PlayerMovement_5
       rect:
         serializedVersion: 2
-        x: 86
-        y: 593
-        width: 18
-        height: 26
+        x: 64
+        y: 576
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -226,10 +226,10 @@ TextureImporter:
       name: PlayerMovement_6
       rect:
         serializedVersion: 2
-        x: 150
-        y: 593
-        width: 20
-        height: 25
+        x: 128
+        y: 576
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -247,10 +247,10 @@ TextureImporter:
       name: PlayerMovement_7
       rect:
         serializedVersion: 2
-        x: 24
-        y: 529
-        width: 16
-        height: 30
+        x: 0
+        y: 512
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -268,10 +268,10 @@ TextureImporter:
       name: PlayerMovement_8
       rect:
         serializedVersion: 2
-        x: 87
-        y: 528
-        width: 17
-        height: 27
+        x: 64
+        y: 512
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -289,10 +289,10 @@ TextureImporter:
       name: PlayerMovement_9
       rect:
         serializedVersion: 2
-        x: 150
-        y: 528
-        width: 20
-        height: 26
+        x: 128
+        y: 512
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -310,10 +310,10 @@ TextureImporter:
       name: PlayerMovement_10
       rect:
         serializedVersion: 2
-        x: 21
-        y: 464
-        width: 21
-        height: 28
+        x: 0
+        y: 448
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -331,10 +331,10 @@ TextureImporter:
       name: PlayerMovement_11
       rect:
         serializedVersion: 2
-        x: 85
-        y: 464
-        width: 21
-        height: 29
+        x: 64
+        y: 448
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -352,10 +352,10 @@ TextureImporter:
       name: PlayerMovement_12
       rect:
         serializedVersion: 2
-        x: 149
-        y: 464
-        width: 21
-        height: 28
+        x: 128
+        y: 448
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -373,10 +373,10 @@ TextureImporter:
       name: PlayerMovement_13
       rect:
         serializedVersion: 2
-        x: 22
-        y: 400
-        width: 19
-        height: 21
+        x: 0
+        y: 384
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -394,10 +394,10 @@ TextureImporter:
       name: PlayerMovement_14
       rect:
         serializedVersion: 2
-        x: 86
-        y: 400
-        width: 19
-        height: 23
+        x: 64
+        y: 384
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -415,10 +415,10 @@ TextureImporter:
       name: PlayerMovement_15
       rect:
         serializedVersion: 2
-        x: 152
-        y: 400
-        width: 16
-        height: 24
+        x: 128
+        y: 384
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -436,10 +436,10 @@ TextureImporter:
       name: PlayerMovement_16
       rect:
         serializedVersion: 2
-        x: 23
-        y: 336
-        width: 17
-        height: 28
+        x: 0
+        y: 320
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -457,10 +457,10 @@ TextureImporter:
       name: PlayerMovement_17
       rect:
         serializedVersion: 2
-        x: 87
-        y: 336
-        width: 17
-        height: 28
+        x: 64
+        y: 320
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -478,10 +478,10 @@ TextureImporter:
       name: PlayerMovement_18
       rect:
         serializedVersion: 2
-        x: 151
-        y: 336
-        width: 17
-        height: 28
+        x: 128
+        y: 320
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -499,10 +499,10 @@ TextureImporter:
       name: PlayerMovement_19
       rect:
         serializedVersion: 2
-        x: 215
-        y: 336
-        width: 17
-        height: 28
+        x: 192
+        y: 320
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -520,10 +520,10 @@ TextureImporter:
       name: PlayerMovement_20
       rect:
         serializedVersion: 2
-        x: 279
-        y: 336
-        width: 17
-        height: 28
+        x: 256
+        y: 320
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -541,10 +541,10 @@ TextureImporter:
       name: PlayerMovement_21
       rect:
         serializedVersion: 2
-        x: 21
-        y: 272
-        width: 25
-        height: 27
+        x: 0
+        y: 256
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -562,10 +562,10 @@ TextureImporter:
       name: PlayerMovement_22
       rect:
         serializedVersion: 2
-        x: 86
-        y: 272
-        width: 23
-        height: 26
+        x: 64
+        y: 256
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -583,10 +583,10 @@ TextureImporter:
       name: PlayerMovement_23
       rect:
         serializedVersion: 2
-        x: 152
-        y: 272
-        width: 18
-        height: 25
+        x: 128
+        y: 256
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -604,10 +604,10 @@ TextureImporter:
       name: PlayerMovement_24
       rect:
         serializedVersion: 2
-        x: 217
-        y: 272
-        width: 16
-        height: 26
+        x: 192
+        y: 256
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -625,10 +625,10 @@ TextureImporter:
       name: PlayerMovement_25
       rect:
         serializedVersion: 2
-        x: 277
-        y: 272
-        width: 21
-        height: 28
+        x: 256
+        y: 256
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -646,10 +646,10 @@ TextureImporter:
       name: PlayerMovement_26
       rect:
         serializedVersion: 2
-        x: 338
-        y: 274
-        width: 26
-        height: 25
+        x: 320
+        y: 256
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -667,10 +667,10 @@ TextureImporter:
       name: PlayerMovement_27
       rect:
         serializedVersion: 2
-        x: 404
-        y: 272
-        width: 25
-        height: 27
+        x: 384
+        y: 256
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -688,10 +688,10 @@ TextureImporter:
       name: PlayerMovement_28
       rect:
         serializedVersion: 2
-        x: 468
-        y: 272
-        width: 23
-        height: 26
+        x: 448
+        y: 256
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -709,10 +709,10 @@ TextureImporter:
       name: PlayerMovement_29
       rect:
         serializedVersion: 2
-        x: 536
-        y: 272
-        width: 16
-        height: 25
+        x: 512
+        y: 256
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -730,10 +730,10 @@ TextureImporter:
       name: PlayerMovement_30
       rect:
         serializedVersion: 2
-        x: 600
-        y: 272
-        width: 17
-        height: 26
+        x: 576
+        y: 256
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -751,10 +751,10 @@ TextureImporter:
       name: PlayerMovement_31
       rect:
         serializedVersion: 2
-        x: 662
-        y: 272
-        width: 21
-        height: 28
+        x: 640
+        y: 256
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -772,10 +772,10 @@ TextureImporter:
       name: PlayerMovement_32
       rect:
         serializedVersion: 2
-        x: 724
-        y: 274
-        width: 25
-        height: 25
+        x: 704
+        y: 256
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -793,10 +793,10 @@ TextureImporter:
       name: PlayerMovement_33
       rect:
         serializedVersion: 2
-        x: 21
-        y: 215
-        width: 29
-        height: 17
+        x: 0
+        y: 192
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -814,10 +814,10 @@ TextureImporter:
       name: PlayerMovement_34
       rect:
         serializedVersion: 2
-        x: 85
-        y: 212
-        width: 29
-        height: 17
+        x: 64
+        y: 192
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -835,10 +835,10 @@ TextureImporter:
       name: PlayerMovement_35
       rect:
         serializedVersion: 2
-        x: 146
-        y: 208
-        width: 27
-        height: 18
+        x: 128
+        y: 192
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -856,10 +856,10 @@ TextureImporter:
       name: PlayerMovement_36
       rect:
         serializedVersion: 2
-        x: 214
-        y: 208
-        width: 21
-        height: 14
+        x: 192
+        y: 192
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -877,10 +877,10 @@ TextureImporter:
       name: PlayerMovement_37
       rect:
         serializedVersion: 2
-        x: 274
-        y: 208
-        width: 18
-        height: 17
+        x: 256
+        y: 192
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -898,10 +898,10 @@ TextureImporter:
       name: PlayerMovement_38
       rect:
         serializedVersion: 2
-        x: 336
-        y: 208
-        width: 24
-        height: 14
+        x: 320
+        y: 192
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -919,10 +919,10 @@ TextureImporter:
       name: PlayerMovement_39
       rect:
         serializedVersion: 2
-        x: 406
-        y: 208
-        width: 16
-        height: 21
+        x: 384
+        y: 192
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -940,10 +940,10 @@ TextureImporter:
       name: PlayerMovement_40
       rect:
         serializedVersion: 2
-        x: 473
-        y: 208
-        width: 15
-        height: 22
+        x: 448
+        y: 192
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -961,10 +961,10 @@ TextureImporter:
       name: PlayerMovement_41
       rect:
         serializedVersion: 2
-        x: 537
-        y: 208
-        width: 16
-        height: 24
+        x: 512
+        y: 192
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -982,10 +982,10 @@ TextureImporter:
       name: PlayerMovement_42
       rect:
         serializedVersion: 2
-        x: 27
-        y: 145
-        width: 13
-        height: 25
+        x: 0
+        y: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1003,10 +1003,10 @@ TextureImporter:
       name: PlayerMovement_43
       rect:
         serializedVersion: 2
-        x: 91
-        y: 145
-        width: 13
-        height: 25
+        x: 64
+        y: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1024,10 +1024,10 @@ TextureImporter:
       name: PlayerMovement_44
       rect:
         serializedVersion: 2
-        x: 155
-        y: 147
-        width: 13
-        height: 23
+        x: 128
+        y: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1045,10 +1045,10 @@ TextureImporter:
       name: PlayerMovement_45
       rect:
         serializedVersion: 2
-        x: 219
-        y: 147
-        width: 13
-        height: 23
+        x: 192
+        y: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1066,10 +1066,10 @@ TextureImporter:
       name: PlayerMovement_46
       rect:
         serializedVersion: 2
-        x: 283
-        y: 147
-        width: 13
-        height: 23
+        x: 256
+        y: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1087,10 +1087,10 @@ TextureImporter:
       name: PlayerMovement_47
       rect:
         serializedVersion: 2
-        x: 347
-        y: 146
-        width: 13
-        height: 24
+        x: 320
+        y: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1108,10 +1108,10 @@ TextureImporter:
       name: PlayerMovement_48
       rect:
         serializedVersion: 2
-        x: 411
-        y: 145
-        width: 13
-        height: 25
+        x: 384
+        y: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1129,10 +1129,10 @@ TextureImporter:
       name: PlayerMovement_49
       rect:
         serializedVersion: 2
-        x: 475
-        y: 145
-        width: 13
-        height: 25
+        x: 448
+        y: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1150,10 +1150,10 @@ TextureImporter:
       name: PlayerMovement_50
       rect:
         serializedVersion: 2
-        x: 539
-        y: 147
-        width: 13
-        height: 23
+        x: 512
+        y: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1171,10 +1171,10 @@ TextureImporter:
       name: PlayerMovement_51
       rect:
         serializedVersion: 2
-        x: 603
-        y: 148
-        width: 13
-        height: 22
+        x: 576
+        y: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1192,10 +1192,10 @@ TextureImporter:
       name: PlayerMovement_52
       rect:
         serializedVersion: 2
-        x: 667
-        y: 147
-        width: 13
-        height: 23
+        x: 640
+        y: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1213,10 +1213,10 @@ TextureImporter:
       name: PlayerMovement_53
       rect:
         serializedVersion: 2
-        x: 731
-        y: 146
-        width: 13
-        height: 24
+        x: 704
+        y: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1234,10 +1234,10 @@ TextureImporter:
       name: PlayerMovement_54
       rect:
         serializedVersion: 2
-        x: 27
-        y: 80
-        width: 17
-        height: 16
+        x: 0
+        y: 64
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1255,10 +1255,10 @@ TextureImporter:
       name: PlayerMovement_55
       rect:
         serializedVersion: 2
-        x: 91
-        y: 80
-        width: 17
-        height: 15
+        x: 64
+        y: 64
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1276,10 +1276,10 @@ TextureImporter:
       name: PlayerMovement_56
       rect:
         serializedVersion: 2
-        x: 155
-        y: 80
-        width: 17
-        height: 15
+        x: 128
+        y: 64
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1297,10 +1297,10 @@ TextureImporter:
       name: PlayerMovement_57
       rect:
         serializedVersion: 2
-        x: 219
-        y: 80
-        width: 17
-        height: 16
+        x: 192
+        y: 64
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1318,10 +1318,10 @@ TextureImporter:
       name: PlayerMovement_58
       rect:
         serializedVersion: 2
-        x: 27
-        y: 16
-        width: 17
-        height: 16
+        x: 0
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1339,10 +1339,10 @@ TextureImporter:
       name: PlayerMovement_59
       rect:
         serializedVersion: 2
-        x: 91
-        y: 16
-        width: 17
-        height: 16
+        x: 64
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1360,10 +1360,10 @@ TextureImporter:
       name: PlayerMovement_60
       rect:
         serializedVersion: 2
-        x: 154
-        y: 16
-        width: 18
-        height: 17
+        x: 128
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1381,10 +1381,10 @@ TextureImporter:
       name: PlayerMovement_61
       rect:
         serializedVersion: 2
-        x: 218
-        y: 16
-        width: 18
-        height: 17
+        x: 192
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1402,10 +1402,10 @@ TextureImporter:
       name: PlayerMovement_62
       rect:
         serializedVersion: 2
-        x: 282
-        y: 16
-        width: 18
-        height: 17
+        x: 256
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1423,10 +1423,10 @@ TextureImporter:
       name: PlayerMovement_63
       rect:
         serializedVersion: 2
-        x: 346
-        y: 16
-        width: 18
-        height: 17
+        x: 320
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1444,10 +1444,10 @@ TextureImporter:
       name: PlayerMovement_64
       rect:
         serializedVersion: 2
-        x: 411
-        y: 16
-        width: 17
-        height: 17
+        x: 384
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1465,10 +1465,10 @@ TextureImporter:
       name: PlayerMovement_65
       rect:
         serializedVersion: 2
-        x: 475
-        y: 16
-        width: 17
-        height: 17
+        x: 448
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1486,10 +1486,10 @@ TextureImporter:
       name: PlayerMovement_66
       rect:
         serializedVersion: 2
-        x: 540
-        y: 16
-        width: 16
-        height: 16
+        x: 512
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1507,10 +1507,10 @@ TextureImporter:
       name: PlayerMovement_67
       rect:
         serializedVersion: 2
-        x: 603
-        y: 16
-        width: 17
-        height: 16
+        x: 576
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1528,10 +1528,10 @@ TextureImporter:
       name: PlayerMovement_68
       rect:
         serializedVersion: 2
-        x: 667
-        y: 16
-        width: 17
-        height: 16
+        x: 640
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1549,10 +1549,10 @@ TextureImporter:
       name: PlayerMovement_69
       rect:
         serializedVersion: 2
-        x: 731
-        y: 16
-        width: 17
-        height: 16
+        x: 704
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

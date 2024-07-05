@@ -1,23 +1,26 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using Player.Data;
+using Player.PlayerStates.SuperStates;
+using Player.StateMachine;
 
-public class PlayerWallClimbState : PlayerTouchingWallState
+namespace Player.PlayerStates.SubStates
 {
-    public PlayerWallClimbState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(player, stateMachine, playerData, animBoolName)
+    public class PlayerWallClimbState : PlayerTouchingWallState
     {
-    }
-
-    public override void LogicUpdate()
-    {
-        base.LogicUpdate();
-        if (!isExitingState)
+        public PlayerWallClimbState(Player.StateMachine.Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(player, stateMachine, playerData, animBoolName)
         {
-            player.SetVelocityY(playerData.wallClimbVelocity);
+        }
 
-            if (yInput != 1)
+        public override void LogicUpdate()
+        {
+            base.LogicUpdate();
+            if (!isExitingState)
             {
-                stateMachine.ChangeState(player.WallGrabState);
+                player.SetVelocityY(playerData.wallClimbVelocity);
+
+                if (YInput != 1)
+                {
+                    stateMachine.ChangeState(player.WallGrabState);
+                }
             }
         }
     }

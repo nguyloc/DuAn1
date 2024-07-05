@@ -1,24 +1,49 @@
-using Player.Data;
-using Player.PlayerStates.SuperStates;
-using Player.StateMachine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-namespace Player.PlayerStates.SubStates
+public class PlayerIdleState : PlayerGroundedState
 {
-    public class PlayerIdleState : PlayerGroundedState
+    public PlayerIdleState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(player, stateMachine, playerData, animBoolName)
     {
-        public PlayerIdleState(Player.StateMachine.Player player, PlayerStateMachine stateMachine, PlayerData playerData
-                             , string animBoolName) : base(player, stateMachine, playerData, animBoolName) { }
+    }
 
+    public override void DoChecks()
+    {
+        base.DoChecks();
+    }
 
-        public override void Enter() {
-            base.Enter();
-            player.SetVelocityX(0f);
-        }
+    public override void Enter()
+    {
+        base.Enter();
+        core.Movement.SetVelocityX(0f);
+    }
 
-        public override void LogicUpdate() {
-            base.LogicUpdate();
+    public override void Exit()
+    {
+        base.Exit();
+    }
 
-            if (XInput != 0 && !isExitingState) stateMachine.ChangeState(player.MoveState);
-        }
+    public override void LogicUpdate()
+    {
+        base.LogicUpdate();
+
+        if (!isExitingState)
+        {
+            if (xInput != 0)
+            {
+                stateMachine.ChangeState(player.MoveState);
+            }
+            else if (yInput == -1)
+            {
+                stateMachine.ChangeState(player.CrouchIdleState);
+            }
+        }       
+        
+    }
+
+    public override void PhysicsUpdate()
+    {
+        base.PhysicsUpdate();
     }
 }

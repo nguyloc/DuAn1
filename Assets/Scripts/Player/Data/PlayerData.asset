@@ -22,8 +22,16 @@ MonoBehaviour:
   variableJumpHeightMultiplier: 0.5
   wallSlideVelocity: 2
   wallClimbVelocity: 3
-  startOffset: {x: 0.35, y: 0.7}
+  startOffset: {x: 0.4, y: 0.9}
   stopOffset: {x: 0.35, y: 0.7}
+  dashCooldown: 0.5
+  maxHoldTime: 1
+  holdTimeScale: 0.25
+  dashTime: 0.2
+  dashVelocity: 30
+  drag: 10
+  dashEndYMultiplier: 0.2
+  distBetweenAfterImages: 0.5
   groundCheckRadius: 0.3
   wallCheckDistance: 0.5
   whatIsGround:

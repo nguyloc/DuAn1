@@ -1,8 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Player.AfterImage
-{
     public class PlayerAfterImagePool : MonoBehaviour
     {
         [SerializeField]
@@ -45,4 +43,3 @@ namespace Player.AfterImage
             return instance;
         }
     }
-}

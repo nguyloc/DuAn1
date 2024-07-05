@@ -4,18 +4,41 @@ using Unity.VisualScripting;
 using UnityEngine;
 using Player.Weapons;
 
-public class WeaponAnimationToWeapon : MonoBehaviour
+
+namespace Intermediaries.WeaponAnimationToWeapon
 {
-   private Weapon weapon;
-
-    private void Start()
+    public class WeaponAnimationToWeapon : MonoBehaviour
     {
-        weapon = GetComponentInParent<Weapon>();
-    }
+        private Weapon weapon;
 
-    private void AnimationFinishTrigger()
-    {
-        weapon.AnimationFinishTrigger();
-    }
+        private void Start()
+        {
+            weapon = GetComponentInParent<Weapon>();
+        }
 
+        private void AnimationFinishTrigger()
+        {
+            weapon.AnimationFinishTrigger();
+        }
+
+        private void AnimationStartMovementTrigger()
+        {
+            weapon.AnimationStartMovementTrigger();
+        }
+
+        private void AnimationStopMovementTrigger()
+        {
+            weapon.AnimationStopMovementTrigger();
+        }
+
+        private void AnimationTurnOffFlipTrigger()
+        {
+            weapon.AnimationTurnOffFlipTrigger();
+        }
+
+        private void AnimationTurnOnFlipTrigger()
+        {
+            weapon.AnimationTurnOnFlipTigger();
+        }
+    }
 }

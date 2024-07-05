@@ -4,11 +4,19 @@ using Player.StateMachine;
 using Player.Inventory;
 using Player.Weapons;
 
+
 namespace Player.PlayerStates.SubStates
 {
     public class PlayerAttackState : PlayerAbilityState
     {
         private Weapon weapon;
+
+        private int xInput;
+
+        private float velocityToSet;
+
+        private bool setVelocity;
+        private bool shouldCheckFlip;
 
         public PlayerAttackState(StateMachine.Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(player, stateMachine, playerData, animBoolName)
         {
@@ -17,6 +25,8 @@ namespace Player.PlayerStates.SubStates
         public override void Enter()
         {
             base.Enter();
+
+            setVelocity = false;
 
             weapon.EnterWeapon();
         }
@@ -28,10 +38,41 @@ namespace Player.PlayerStates.SubStates
             weapon.ExitWeapon();
         }
 
+        public override void LogicUpdate()
+        {
+            base.LogicUpdate();
+
+            xInput = player.InputHandler.NormInputX;
+
+            if (shouldCheckFlip)
+            {
+                core.Movement.CheckIfShouldFlip(xInput);
+            }
+
+
+            if (setVelocity)
+            {
+                core.Movement.SetVelocityX(velocityToSet * core.Movement.FacingDirection);
+            }
+        }
+
         public void SetWeapon(Weapon weapon)
         {
             this.weapon = weapon;
-            weapon.InitializeWeapon(this);
+            this.weapon.InitializeWeapon(this);
+        }
+
+        public void SetPlayerVelocity(float velocity)
+        {
+            core.Movement.SetVelocityX(velocity * core.Movement.FacingDirection);
+
+            velocityToSet = velocity;
+            setVelocity = true;
+        }
+
+        public void SetFlipCheck(bool value)
+        {
+            shouldCheckFlip = value;
         }
 
         public override void AnimationFinishTrigger()

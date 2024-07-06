@@ -10,5 +10,9 @@ public class Skill : MonoBehaviour
     [TextArea(1, 3)]
     public string skillDes;
     public bool isUpgrade;
+
+    public Skill[] previousSkill;
+
+    
     
 }
